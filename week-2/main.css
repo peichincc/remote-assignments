@@ -32,7 +32,7 @@
   .header {
     flex-direction: row;
     justify-content: space-between;
-    }
+  }
 }
 
 
@@ -42,6 +42,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .header {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -135,31 +140,12 @@ body {
     padding: 0;
 }
 
-/* week2 mobile menu */
-.aside{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 270px;
-  background-color: #fff;
-}
-.aside li{
-  /* display: none; */
-  list-style: none;
-}
-
-.aside li a{
-  text-decoration: none;
-  color: #000;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
 
 /* hamburger menu and media quries */
 
  .hamburger {
   display: none;
+  z-index: 1;
 } 
 
 .bar {
@@ -175,13 +161,13 @@ body {
 @media screen and (max-width: 800px) {
   .nav {
     display: flex;
-    width: 40%;
+    width: 100%;
     position: fixed;
     right: -100%;
-    top: 5rem;
+    top: 0rem;
     flex-direction: column;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 0px;
     text-align: center;
     /* transition: 0.3s; */
     box-shadow:

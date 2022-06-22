@@ -1,7 +1,7 @@
 .header{
   flex-wrap: nowrap;
 }
-
+/* update */
 /* Content Media queries */
 
 @media (min-width: 500px) {
@@ -61,8 +61,8 @@ Styling
 .wrapper{
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
 }
 
 button{
@@ -149,7 +149,7 @@ body {
  .hamburger {
   display: none;
   z-index: 1;
-} 
+}
 
 .bar {
   display: block;

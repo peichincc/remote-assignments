@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head></head>
+
+<body>
+    <h1>Hello Server!</h1>
+    <input id ="content" placeholder="Please enter a number" />
+    <button id ="send" type="button">Submit</button>
+    <p>
+    Show the result: <span id="result"></span>
+
+<!-- Q3 call the AJAX-->
+    <script>
+
+const send = document.getElementById('send');
+const content = document.getElementById('content');
+// const result = document.getElementById('result');
+
+send.addEventListener('click',function(){
+    let value = content.value;
+    console.log(value);
+
+    const getData = () => fetch(`http://localhost:3000/getData?number=${value}`)
+    .then(response => response.text())
+    async function main() {
+        let result 
+        try {     // 這個時候就可以使用 try catch 的寫法了
+            result = await getData()
+        } catch(err) {
+            console.log(err)
+        }
+        console.log(result)
+        let final = document.getElementById("result");
+        final.innerHTML = result;
+    }
+    main()
+});
+
+    </script>
+
+</body>
+
+</html>
+
+

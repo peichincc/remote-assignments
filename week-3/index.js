@@ -50,7 +50,7 @@ app.get('/', function (req, res) {
 // POST and cookies, redirect
  app.post('/myName', (req, res)=>{ 
      res.cookie('username',req.body.username);
-     res.redirect('/');
+     res.redirect('trackName?name=' + req.body.username);
  });
 
 // Goodbye - To clear cookies
@@ -58,7 +58,15 @@ app.get('/', function (req, res) {
      res.clearCookie('username');
      res.redirect('/myName');
  });
-
+// TrackName
+//  app.get('/trackName',(req,res)=>{
+//     const name = req.cookies.username;
+//     if(name){
+//         res.render('trackName');
+//     } else {
+//         res.redirect('myName');
+//     }
+//  });
 
 // Error 404
 // app.use((req,res,next)=>{

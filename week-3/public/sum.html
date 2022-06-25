@@ -10,12 +10,11 @@
     <p>
     Show the result: <span id="result"></span>
 
-<!-- Q3 call the AJAX-->
+<!-- Q3 call the AJAX -->
     <script>
 
 const send = document.getElementById('send');
 const content = document.getElementById('content');
-// const result = document.getElementById('result');
 
 send.addEventListener('click',function(){
     let value = content.value;
@@ -25,7 +24,7 @@ send.addEventListener('click',function(){
     .then(response => response.text())
     async function main() {
         let result 
-        try {     // 這個時候就可以使用 try catch 的寫法了
+        try {    
             result = await getData()
         } catch(err) {
             console.log(err)

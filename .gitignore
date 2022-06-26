@@ -1,2 +1,7 @@
 /node_modules
 /week-3/node_modules
+.DS_Store
+/week-3/.DS_Store
+/week-2/.DS_Store
+/week-1/.DS_Store
+.gitignore

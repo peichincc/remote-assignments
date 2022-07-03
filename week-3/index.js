@@ -19,7 +19,6 @@ const getDataRoutes = require('./routes/getData');
 const { raw } = require('body-parser');
 app.use('/getData',getDataRoutes);
 
-
 // Index
 app.get('/', (req, res)=>{
     const name = req.cookies.username;
@@ -53,20 +52,22 @@ app.get('/', function (req, res) {
      res.redirect('trackName?name=' + req.body.username);
  });
 
-// Goodbye - To clear cookies
- app.post('/goodbye', (req,res)=>{
-     res.clearCookie('username');
-     res.redirect('/myName');
- });
 // TrackName
-//  app.get('/trackName',(req,res)=>{
-//     const name = req.cookies.username;
-//     if(name){
-//         res.render('trackName');
-//     } else {
-//         res.redirect('myName');
-//     }
-//  });
+  app.get('/trackName',(req,res)=>{
+    const name = req.cookies.username;
+     if(name){
+         res.render('/');
+     } else {
+         res.redirect('myName');
+     }
+  });
+
+// Goodbye - To clear cookies
+app.post('/goodbye', (req,res)=>{
+    res.clearCookie('username');
+    res.redirect('/myName');
+});
+
 
 // Error 404
 // app.use((req,res,next)=>{

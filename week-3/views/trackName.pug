@@ -1,8 +1,7 @@
 extends layout 
 
-block content 
-       form(action='/myName', method='post') 
-        label Please enter your name: 
-          input(type='test', name='username')
-        button(type='submit') Submit
+block content
+    h2 Welcome. #{name}!
+      form(action='goodbye', method='post')
+        button(type='submit') Goodbye
 

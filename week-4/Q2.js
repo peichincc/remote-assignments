@@ -1,14 +1,7 @@
-function ajax (src, callback){
-  fetch(src)
-  .then((response) => {
-    return response.json();
-  })
-  .then( (response) => {
-    console.log(response);
-  })
-  .catch((error) => {
-    console.log(`Error: ${error}`);
-  })
+function ajax(src, callback) {
+  let fetchData = await fetch(src);
+  let parseData = await fetchData.json();
+  callback(parseData);
 }
 
 function render(data){
@@ -16,7 +9,29 @@ function render(data){
   final.innerHTML = JSON.stringify(data);
 }
 
+// All typles of try and error process....
 
+// function ajax (src, callback){
+//   const getData = () => fetch(src,
+//     {
+//       method: "GET", 
+//       mode: 'cors',
+//       headers: {
+//         'Access-Control-Allow-Origin': '*',
+//       }
+//     }).then(response => response.text())
+//     async function main() {
+//       let result 
+//       try {    
+//         result = await getData()
+//       } catch(err) {
+//         console.log(err)
+//       }
+//       console.log(result)
+//       callback(result)
+//     }
+//     main()
+//   }
 
 // var src = "https://appworks-school.github.io/Remote-Aassigiment-Data/products"
 
@@ -56,6 +71,28 @@ function render(data){
 //   // document.getElementById('root').innerHTML = JSON.stringify(data);
 // }
 
+// fetch('https://appworks-school.github.io/Remote-Aassigiment-Data/products')
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(myJson) {
+//     console.log(myJson);
+//   });
+
+// const getData = () => fetch(src)
+// .then(response => response.text())
+// async function main() {
+//   let result 
+//   try {    
+//     result = await getData()
+//   } catch(err) {
+//     console.log(err)
+//   }
+//   console.log(result)
+//   let final = document.getElementById("result");
+//   final.innerHTML = result;
+// }
+// main()
 
 // Question //
 function ajax(src, callback) {
